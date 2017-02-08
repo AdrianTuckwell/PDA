@@ -8,18 +8,29 @@ This is integrated into an HTML page that gives a 'calculator layout' of buttons
 
 The calculator object has properties to keep track of calculations as it performs them.
 
-You can run the code from the terminal with `npm start` or `node server.js`, you can then view the calculator at http://localhost:3000.
 
 ##SETUP:
 Run `npm install` to install all dependencies.
 
-You can run the unit tests from the terminal with `npm start`.
+You can run the code from the terminal with `npm start`, you can then view the calculator at http://localhost:3000.
 
-You can run the integration/acceptance tests from the terminal with `webdriver-manager start` and `protractor conf.js` in another terminal tab - the node server must also be running for this to work.
+You can run the unit tests from the terminal with `npm test`.
+
+To run the integration / browser tests:
+
+Run `npm run webdriver-update` to update the webdriver server that the integration tests run on.
+
+With your localhost:3000 server still running, open a new tab in Terminal and run `npm run webdriver`
+
+Leave that server running as well. Then run `npm run protractor` to run the integration tests.
 
 ##Tasks
 
+###Unit Tests
+
 You need to write unit tests to ensure that the majority of functions in the calculator operate correctly. The test framework to be used is Mocha. The file to write in is in `/tests/unit/calculator_spec.js`.
+
+All of these functions should be tested thoroughly:
 
   - calculator.add()
   - calculator.subtract()
@@ -29,14 +40,16 @@ You need to write unit tests to ensure that the majority of functions in the cal
   - calculator.operatorClick()
   - calculator.clearClick()
 
-You need to write integration/acceptance tests to ensure all of the units of code work together in the browser to perform as the user would wish. The framework provided to do this is Protractor JS, and there is one sample test written in `/tests/integration/tests.js`. 
+### Integration/Acceptance Tests
+
+You need to write integration/acceptance tests to ensure all of the units of code work together in the browser to perform as the user would wish. The framework provided to do this is Protractor JS using Chai for assertions, and there is one sample test written in `/tests/integration/tests.js`. 
 
 You should write tests to ensure:
 
   - Do the number buttons work to update the display of the running total?
   - Do each of the arithmetical operations work to update the display with the result of the operation?
   - Can we chain multiple operations together?
-  - Does it work as expected for a range of numbers? (positive, negative, decimals, large numbers)
+  - Does it work as expected for a range of numbers? (positive, negative, decimals, very large numbers)
 
 What does the code do in exceptional circumstances?
 

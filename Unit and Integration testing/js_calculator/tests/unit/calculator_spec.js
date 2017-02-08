@@ -51,7 +51,7 @@ describe('calculator', function () {
     calculator.previousTotal = 9;
     calculator.previousOperator = '+';
     calculator.runningTotal = 1;
-    calculator.operatorClick("+");
+    calculator.operatorClick("=");
     assert.equal(10, calculator.runningTotal)
   })
 
@@ -59,7 +59,7 @@ describe('calculator', function () {
     calculator.previousTotal = 10;
     calculator.previousOperator = '-';
     calculator.runningTotal = 1;
-    calculator.operatorClick("-");
+    calculator.operatorClick("=");
     assert.equal(9, calculator.runningTotal)
   })
 
@@ -67,7 +67,7 @@ describe('calculator', function () {
     calculator.previousTotal = 10;
     calculator.previousOperator = '*';
     calculator.runningTotal = 10;
-    calculator.operatorClick("*");
+    calculator.operatorClick("=");
     assert.equal(100, calculator.runningTotal)
   })
 
@@ -75,7 +75,7 @@ describe('calculator', function () {
     calculator.previousTotal = 10;
     calculator.previousOperator = '/';
     calculator.runningTotal = 10;
-    calculator.operatorClick("/");
+    calculator.operatorClick("=");
     assert.equal(1, calculator.runningTotal)
   })
 
